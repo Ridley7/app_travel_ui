@@ -1,4 +1,5 @@
 import 'package:app_travel_ui/models/activity_model.dart';
+import 'package:app_travel_ui/screens/activity_screen.dart';
 import 'package:flutter/material.dart';
 
 class DestinationCarousel extends StatefulWidget {
@@ -25,13 +26,22 @@ class _DestinationCarouselState extends State<DestinationCarousel> {
               width: 250.0,
               child: Stack(
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(10.0),
-                    child: Image(
-                      height: 350.0,
-                      width: 250.0,
-                      image: AssetImage(activity.image),
-                      fit: BoxFit.cover,
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => ActivityScreen(activity: activity,))
+                      );
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: Image(
+                        height: 350.0,
+                        width: 250.0,
+                        image: AssetImage(activity.image),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
 
