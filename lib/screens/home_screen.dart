@@ -132,6 +132,7 @@ class _MainPageState extends State<MainPage> {
                     ),
                 ),
               ),
+
               const SizedBox(height: 30.0,),
               const DestinationCarousel(),
               const SizedBox(height: 30.0,),
